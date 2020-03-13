@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Box from '@material-ui/core/Box'
 
 import classes from './Home.module.css'
+import Banner from '../../components/UI/Banner/Banner';
 
 class HomePage extends Component {
     
@@ -9,12 +10,12 @@ class HomePage extends Component {
         return (
             <Fragment>
                 <Box className={classes.bannerbox}>
-                    BannerBox
+                    <Banner imgsrc=''/>
                 </Box>
                 <Box>
                     NewsBox
                 </Box>
-            </Fragment>    
+            </Fragment>
         )
     }
 }

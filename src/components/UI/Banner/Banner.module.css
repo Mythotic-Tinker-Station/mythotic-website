@@ -1,0 +1,8 @@
+.bannerdiv {
+    display: flex;
+    background-color: black;
+    width: 100vh;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;  
+}

@@ -1,4 +1,7 @@
 .bannerbox {
-    padding: 30px
-
+    display: flex;
+    padding: 8%;
+    background-color: black;
+    align-content: center;
+    justify-content: center;
 }
