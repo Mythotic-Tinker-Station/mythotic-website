@@ -3,6 +3,7 @@ import Box from '@material-ui/core/Box'
 
 import classes from './Home.module.css'
 import Banner from '../../components/UI/Banner/Banner';
+import NewsFeed from '../../components/NewsComponent/NewsFeed';
 
 class HomePage extends Component {
     
@@ -13,7 +14,7 @@ class HomePage extends Component {
                     <Banner imgsrc=''/>
                 </Box>
                 <Box>
-                    NewsBox
+                    <NewsFeed />
                 </Box>
             </Fragment>
         )

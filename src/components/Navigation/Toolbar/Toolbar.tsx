@@ -10,8 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 
 import AppMenuItem from "./MenuItem";
-//import cssclasses from "./Toolbar.module.css";
-//import Logo from "../Logo/Logo";
+import Modal from "../../UI/Modal/Modal";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -65,6 +64,7 @@ const appMenuItems = [
 export default function Appbar(props: any) {
 	const classes = useStyles();
 
+	// Menu Drawer Functions
 	const [state, setState] = React.useState({
 		top: false,
 		left: false,
@@ -102,6 +102,22 @@ export default function Appbar(props: any) {
 		</List>
 	);
 
+	// Login Button Functions
+	
+	const [modalOn, setModalOn] = React.useState(false)
+
+	const togglemodal = () => {
+		let newState = modalOn;
+		newState = !newState;
+		setModalOn(newState);
+	} 
+
+	const LoggingIn = () => (
+		<Modal>
+                Test
+		</Modal>
+	);
+
 	return (
 		<AppBar position='static'>
 			<Toolbar>
@@ -118,7 +134,10 @@ export default function Appbar(props: any) {
 				<Typography variant='h6' className={classes.title}>
 					News
 				</Typography>
-				<Button color='inherit'>Login</Button>
+				{modalOn ? LoggingIn : null}
+				<Button color='inherit' onClick={togglemodal}>
+					Login
+				</Button>
 			</Toolbar>
 		</AppBar>
 	);
