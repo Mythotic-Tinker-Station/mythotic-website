@@ -1,0 +1,155 @@
+//Handwriting stuff
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500');
+
+@font-face {
+    font-family: "Foundation";
+    src: url("./font/kingthings_foundation/Kingthings_Foundation.ttf");
+}
+
+$font-colorOnDark: #ebebeb;
+$font-colorOnWhite: #666;
+
+//Page Color
+$background: rgb(24, 24, 24);
+$foreground: rgba(20, 20, 20, 0.808);
+
+@mixin video-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(151, 224, 41);
+    &:hover {
+        color: greenyellow;
+    }
+}
+
+$site-font-size-width: 1em;
+
+html {
+    font-size: 16px;
+    font-size: $site-font-size-width;
+}
+
+body {
+    margin: 0;
+    color: $font-colorOnDark;
+    background-color: $background;
+    font-weight: 300;
+    font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#download-wrapper {
+    background-color: rgba(34, 34, 34, 0.658);
+    border-radius: 5px;
+    position: absolute;
+    top: calc(75vh/2 - .5rem);
+    left: calc(50% - 10rem);
+    width: 20rem;
+    text-align: center;
+    h3 {
+        font-weight: 300;
+    }
+    hr {
+        width: 30%;
+        border-color: rgba(255, 0, 0, 0.281);
+    }
+}
+
+div.video-filter {
+    @include video-cover;
+    background-color: rgba(41, 41, 41, 0.699);
+    z-index: -1;
+}
+div.video-container{
+    @include video-cover;
+    z-index: -2;
+    video {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-areas: "." "h" "s";
+    grid-template-rows: 75vh 25vh auto;
+}
+
+.summary {
+    grid-area: s;
+    height: 60vh;
+}
+
+header {
+    grid-area: h;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $foreground;
+    padding: 0 3rem;
+    .logo {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        & img {
+            margin-right: 2rem;
+        }
+    }
+    .list-wrapper {
+        color: rgb(115, 192, 0);
+        justify-self: end;
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 2fr 3fr;
+        h3 {
+            font-weight: 300;
+            font-size: 1.75rem;
+        }
+        ul {
+            display: grid;
+            align-content: center;
+            grid-auto-rows: 1em;
+            grid-row-gap: 5%;
+            font-size: 1.2rem;
+            text-align: right;
+            margin-left: -2rem;
+            list-style: none;
+        }
+    }
+    img {
+        $lexiconSquareSize: 6rem;
+        width: $lexiconSquareSize;
+        height: $lexiconSquareSize;
+        filter: brightness(150%);
+    }
+    h1, h5 {
+        text-align: center;
+        margin: 0;
+    }
+    h1 {
+        font-family: "Foundation", 'Arial';
+        font-size: 4.65rem;
+    }
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+    .lexi-quote {
+        background-color: $foreground;
+        font-family: 'La Belle Aurore', cursive;
+        p {
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+        }
+    }
+}
