@@ -13,14 +13,12 @@ import classes from "./App.module.css";
 class App extends Component {
   render() {
     return (
-        <Fragment>
+      <Fragment>
           <ToolBar />
-          <div className={classes.AppContent}>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/lexicon' component={Lexicon} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/lexicon' component={Lexicon} />
+          </Switch>
       </Fragment>
     );
   }

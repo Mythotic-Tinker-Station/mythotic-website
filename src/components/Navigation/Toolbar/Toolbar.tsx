@@ -73,17 +73,7 @@ export default function Appbar(props: any) {
 	});
 
 	type DrawerSide = "top" | "left" | "bottom" | "right";
-	const toggleDrawer = (side: DrawerSide, open: boolean) => (
-		event: React.KeyboardEvent | React.MouseEvent
-	) => {
-		if (
-			event.type === "keydown" &&
-			((event as React.KeyboardEvent).key === "Tab" ||
-				(event as React.KeyboardEvent).key === "Shift")
-		) {
-			return;
-		}
-
+	const toggleDrawer = (side: DrawerSide, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
 		setState({ ...state, [side]: open });
 	};
 
@@ -121,15 +111,16 @@ export default function Appbar(props: any) {
 	return (
 		<AppBar position='static'>
 			<Toolbar>
+				<Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+					{AppMenu('left')}
+				</Drawer>
 				<IconButton
+					onClick={toggleDrawer("left", true)}
 					edge='start'
 					className={classes.menuButton}
 					color='inherit'
 					aria-label='menu'>
-					<MenuIcon onClick={toggleDrawer("left", true)}/>
-					<Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-						{AppMenu('left')}
-					</Drawer>
+					<MenuIcon/>
 				</IconButton>
 				<Typography variant='h6' className={classes.title}>
 					News
