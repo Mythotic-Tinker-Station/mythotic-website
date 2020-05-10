@@ -7,7 +7,6 @@ import ToolBar from "./components/Navigation/Toolbar/Toolbar";
 // Import Containers
 import Home from './containers/Home/Home';
 import Lexicon from './containers/Lexicon/Lexicon';
-import classes from "./App.module.css";
 
 
 class App extends Component {

@@ -3,14 +3,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Drawer from "@material-ui/core/Drawer";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 
 import AppMenuItem from "./MenuItem";
-import Modal from "../../UI/Modal/Modal";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -94,19 +91,19 @@ export default function Appbar(props: any) {
 
 	// Login Button Functions
 	
-	const [modalOn, setModalOn] = React.useState(false)
+	// const [modalOn, setModalOn] = React.useState(false)
 
-	const togglemodal = () => {
-		let newState = modalOn;
-		newState = !newState;
-		setModalOn(newState);
-	} 
+	// const togglemodal = () => {
+	// 	let newState = modalOn;
+	// 	newState = !newState;
+	// 	setModalOn(newState);
+	// } 
 
-	const LoggingIn = () => (
-		<Modal>
-                Test
-		</Modal>
-	);
+	// const LoggingIn = () => (
+	// 	<Modal>
+    //             Test
+	// 	</Modal>
+	// );
 
 	return (
 		<AppBar position='static'>
@@ -122,13 +119,6 @@ export default function Appbar(props: any) {
 					aria-label='menu'>
 					<MenuIcon/>
 				</IconButton>
-				<Typography variant='h6' className={classes.title}>
-					News
-				</Typography>
-				{modalOn ? LoggingIn : null}
-				<Button color='inherit' onClick={togglemodal}>
-					Login
-				</Button>
 			</Toolbar>
 		</AppBar>
 	);
