@@ -22,14 +22,20 @@ interface NewsFeedProps {
 class NewsFeed extends Component<NewsFeedProps, NewsData> {
 	constructor(props: NewsFeedProps) {
 		super(props);
-
 		this.state = { newsObj: [] };
 	}
 
-	async componentDidMount() {
-		let request = await Axios.get("http://localhost:9000/api/news");
-		let newsObj = await request.data;
-		this.setState({ newsObj });
+	componentDidMount() {
+
+		Axios.get("http://localhost:9000/api/news")
+			.then(response => response.data)
+			.then((newsJson: NewsData) => this.setState({...newsJson}))
+			.catch(e => {
+				console.log('Could not connect to newsfeed.');
+		});
+
+		
+
 	}
 
 	render() {
