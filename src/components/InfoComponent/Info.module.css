@@ -1,0 +1,15 @@
+.info {
+    list-style: none;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1px;
+    color: white;
+}
+
+.info h1 {
+    font-weight: bolder;
+}
+
+.info span {
+    margin-right: 10%;
+}
